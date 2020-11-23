@@ -30,7 +30,7 @@ function ServiceSlide({service, availableBookings}) {
 
   const handleBookBtn = async () => {
     const customerId = AuthService.getCurrentUser()?.id
-    if (!customerId) setAlertErrorMsg('Customer ID not found')
+    if (!customerId) setAlertErrorMsg('Booking Functionality Unavailable')
 
     const payload = {
       serviceName: service.name,
@@ -61,7 +61,7 @@ function ServiceSlide({service, availableBookings}) {
     <>
       <main className="service-slide">
         <div className="slide-heading">
-          
+          <img src={service.photo} alt="not found" width="340" height="220" />
           <div className="slide-core">
             <h1>{service.name}</h1>
             <p>{service.description}</p>

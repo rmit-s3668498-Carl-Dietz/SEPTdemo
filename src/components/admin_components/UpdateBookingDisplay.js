@@ -26,7 +26,7 @@ function UpdateBookingDisplay({booking, deleteFunc}) {
           <span>Employee No. {booking.employeeId}</span>
         </div>
         <hr></hr>
-        <button className="actButton" onClick = {deleteFunc}>DELETE</button>
+        <button className="actButton" disabled onClick = {() => deleteFunc}>DELETE</button>
       </main>
   )
 }

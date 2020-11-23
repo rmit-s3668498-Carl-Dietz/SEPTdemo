@@ -27,7 +27,9 @@ class AdminServicesContainer extends React.Component {
   //GET data request from API
   /*If an API isn't running on your local machine, 
 	replace the below fetch with 'https://jsonplaceholder.typicode.com/posts' for testing*/
-  /*componentDidMount() {
+  componentDidMount() {
+
+    /*
     fetch(serviceApi.getAllServices)
       .then((res) => res.json())
       .then((data) => {
@@ -43,7 +45,8 @@ class AdminServicesContainer extends React.Component {
         this.setState({bookings: data});
       })
       .catch(console.log)
-  }*/
+      */
+  }
 
   //Search function - if there is user input, filter services
   searchFor = (val) => {
@@ -114,11 +117,14 @@ class AdminServicesContainer extends React.Component {
         console.log(error);
       });*/
       
-      var oldService = servicesData.find(({ id }) => id === updatedService.id);
+      var oldService = this.state.services.find(({ id }) => id === updatedService.id);
 
       if(oldService)
       {
-        servicesData.splice(servicesData.indexOf(oldService), 1, updatedService);
+        let s = [...this.state.services];
+        s.splice(s.indexOf(oldService), 1);
+        this.setState({services: s});
+        this.setState({displayServices: s});
       }
       else
       {
@@ -145,15 +151,19 @@ class AdminServicesContainer extends React.Component {
       console.log(error);
     });*/
 
-    for (let i = 0; i < bookingsData.length; i++) {
-      if(bookingsData[i].serviceName === service.serviceName)
+    for (let i = 0; i < this.state.bookings.length; i++) {
+      if(this.state.bookings[i].serviceName === service.serviceName)
       {
-        bookingsData.splice(i,1);
+        let books = [...this.state.bookings];
+        books.splice(i, 1);
+        this.setState({bookings: books});
       }
     }
 
-    servicesData.splice(servicesData.indexOf(service), 1);
-
+    let s = [...this.state.services];
+    s.splice(s.indexOf(service), 1);
+    this.setState({services: s});
+    this.setState({displayServices: s});
   }
   
   render() {

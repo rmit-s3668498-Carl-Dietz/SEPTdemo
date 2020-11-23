@@ -16,7 +16,7 @@ function AddBookingDisplay({service, employees, avails, createFunc}) {
 
   useEffect(() => {
     setAvailabilities(avails);
-  });
+  },[avails]);
 
   if(service == null)
   {
@@ -73,8 +73,8 @@ function AddBookingDisplay({service, employees, avails, createFunc}) {
         </div>
         <hr></hr>
         <form className = 'add-booking-form' onSubmit={handleSubmit}>
-          <input type="time" name='time' value={vals.time} onChange={handleChange} role='textbox'/>
-          <input type="date" name='date' value={vals.date} min={CURRENT_DATE} max={NEXT_DATE} onChange={handleChange} role='textbox'></input>
+          <input type="time" name='time' value={vals.time} onChange={handleChange} />
+          <input type="date" name='date' value={vals.date} min={CURRENT_DATE} max={NEXT_DATE} onChange={handleChange} ></input>
           <div><label htmlFor='employees'>Assigned Employee No: </label><span role='note'>{vals.employeeName}</span></div>
             <select name="employeeName" id="employees" onChange={handleChange} role ='list' multiple>
               {empOptions}

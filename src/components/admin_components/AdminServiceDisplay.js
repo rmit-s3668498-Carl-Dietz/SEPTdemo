@@ -59,7 +59,7 @@ function AdminServiceDisplay({ service, bookings, plusFunc, btnFunc, updateFunc,
 
     const renderEditing = () => {
         return(
-            <form className="admin-edit-service" role = 'form' onSubmit={saveChanges}>
+            <form className="admin-edit-service" onSubmit={saveChanges}>
                 <div className="edit-service-body">
                     <span>photo</span>
                     <label htmlFor="addService-file-Upload" className="addService-fileLabel">
@@ -79,7 +79,7 @@ function AdminServiceDisplay({ service, bookings, plusFunc, btnFunc, updateFunc,
                         {service.description}
                     </textarea>
                     <div>
-                        <button className = "actButton" type="submit">save</button>
+                        <button className = "actButton" type="submit" disabled>save</button>
                         <button className = "actButton" onClick={deleteService}>DELETE</button>
                     </div>
                     

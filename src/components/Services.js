@@ -1,11 +1,8 @@
 import React from 'react'
 
-import TextField from '@material-ui/core/TextField'
-import moment from 'moment'
 import '../containers/App.css'
 const {default: ServiceCard} = require('../components/ServiceCard')
 
-const CURRENT_DATE = moment().format('YYYY-MM-DD')
 
 //Displays Service cards
 function Services(props) {

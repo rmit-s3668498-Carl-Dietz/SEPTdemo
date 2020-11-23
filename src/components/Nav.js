@@ -5,7 +5,6 @@ import '../containers/App.css'
 import AuthService from '../services/auth.service'
 import ModalPane from '../containers/ModalPane'
 import CurrentUser from '../context/CurrentUser'
-import UserType from '../config/userType'
 
 //Basic Top Navigation Bar
 function Nav() {
@@ -94,10 +93,17 @@ function Nav() {
 }
 
 function renderNavItems(currentUser) {
+  
+
+  return(
+    <>
+     <Link to="/services" className="big-link">services</Link>
+     <Link to="/adminservices" className="big-link">admin</Link>
+    </>
+  );
+  /*
   if (!currentUser) return
-
   const {userType} = currentUser
-
   // conditionally render navigation items
   switch (userType.toLowerCase()) {
     case UserType.Customer:
@@ -134,7 +140,8 @@ function renderNavItems(currentUser) {
           <Link to="/employees" className="big-link">employees</Link>
         </>
       )
-  }
+    */
 }
+
 
 export default Nav

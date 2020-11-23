@@ -25,7 +25,7 @@ export const servicesData = [
     },
     {
         "id": 5,
-        "name": "The Conqueror Worm",
+        "name": "Conqueror Worm",
         "description": "But see, amid the mimic rout, A crawling shape intrude! A blood-red thing that writhes from out The scenic solitude! It writhes!—it writhes!—with mortal pangs The mimes become its food, And seraphs sob at vermin fangs In human gore imbued.",
         "photo": "not-found.png"
     }

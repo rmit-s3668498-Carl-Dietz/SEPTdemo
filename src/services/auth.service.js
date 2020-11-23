@@ -39,6 +39,7 @@ const logout = () => {
 //Get current user data from local storage
 const getCurrentUser = () => {
   return JSON.parse(localStorage.getItem(USER_STORAGE_KEY))
+  //return userData[0];
 }
 
 export default {

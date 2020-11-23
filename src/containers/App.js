@@ -41,12 +41,12 @@ function App() {
     )
   }
 
-  function LoginRoute({children, ...rest}) {
+ /* function LoginRoute({children, ...rest}) {
     return (
       // Show the component only when the user is logged in
       <Route {...rest} render={() => (user ? <Redirect to="/services" /> : children)} />
     )
-  }
+  }*/
 
   //Routing list of major pages in application
   return (

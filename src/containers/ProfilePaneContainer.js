@@ -1,8 +1,7 @@
 import React, {useEffect} from 'react'
-import Axios from 'axios'
 
 import ProfilePane from '../components/ProfilePane'
-import AuthService from '../services/auth.service'
+
 import '../containers/App.css'
 import { userData } from '../data/userData'
 
@@ -32,7 +31,7 @@ const ProfilePaneContainer = ({close, change}) => {
     } catch (err) {
       alert(err)
     }*/
-    setProfile(userData.find(({ id }) => id == 1));
+    setProfile(userData.find(({ id }) => id === 1));
   }
 
   //Reads in changed values and PUTS them to the backend

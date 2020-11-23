@@ -1,18 +1,18 @@
 import React, {useState, useEffect} from 'react'
-import Axios from 'axios'
+
 import {useParams} from 'react-router-dom'
 
 import { servicesData } from '../data/servicesData'
 import { bookingsData } from '../data/bookingsData'
 
 import ServiceDetail from '../components/ServiceDetail'
-import BookingApi from '../config/bookingApi'
+
 
 //Retrieves data for detailed display of a single service
 function ServiceDetailContainer() {
   const {targetId} = useParams()
-  const [service, setService] = useState(servicesData.find(({ id }) => id == targetId));
-  const [bookings, setBookings] = useState(bookingsData)
+  const [service] = useState(servicesData.find(({ id }) => id === targetId));
+  const [bookings] = useState(bookingsData)
 
   useEffect(() => {
     /*const callApis = async () => {

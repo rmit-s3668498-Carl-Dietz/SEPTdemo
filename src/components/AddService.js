@@ -13,6 +13,7 @@ function AddService({create}) {
         if(name !== "" && description !== "")
         {
             create(name, description, img);
+            alert('functionality unavailable');
             history.push('/adminservices');
             window.location.reload();
         }

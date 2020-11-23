@@ -1,27 +1,23 @@
 import React, {useEffect} from 'react'
-import axios from 'axios'
 
 import ProfileBookings from '../components/booking_components/ProfileBookings'
-import AuthService from '../services/auth.service'
 import '../containers/App.css'
-import {userData} from '../data/userData'
 import {bookingsData} from "../data/bookingsData";
 
 //Retrieves and displays current user profile data
 const ProfileBookingsContainer = ({change}) => {
 
   //User profile for bookings data
-  const [profile, setProfile] = React.useState({});
-  const [bookings, setBookings] = React.useState(bookingsData);
+  const [bookings, setBookings] = React.useState([...bookingsData.filter(b => b.customerId === 1)]);
 
   useEffect(() => {
-    loadProfile();
+    //loadProfile();
     //loadBookings();
   }, [])
 
   //API call to retrieve user data
-  const loadProfile = async () => {
-    /*
+ /* const loadProfile = async () => {
+    
     if (!AuthService.getCurrentUser()) {
       
       return null
@@ -33,9 +29,8 @@ const ProfileBookingsContainer = ({change}) => {
       setProfile(data)
     } catch (err) {
       alert(err)
-    }*/
-    setProfile(userData.find(({ id }) => id == 1));
-  }
+    }
+  }*/
 
   const deleteBooking = (booking) => {
     /*
@@ -47,9 +42,10 @@ const ProfileBookingsContainer = ({change}) => {
     .catch(error => {
       console.log(error);
     });*/
-    bookingsData.filter(b => {
-      return b.id != booking.id;
-    });
+
+    let books = [...bookings];
+    books.splice(bookings.indexOf(booking), 1);
+    setBookings(books);
   }
 
   /*const loadBookings = async () => {
