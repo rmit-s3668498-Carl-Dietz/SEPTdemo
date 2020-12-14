@@ -4,7 +4,7 @@ Consequently many pieces of functionality are disabled and there is no longer an
 
 In the project directory, use commands:
 
-##`npm install`
+## `npm install`
 ### `npm start`
 
 Runs the app in the development mode.<br />
